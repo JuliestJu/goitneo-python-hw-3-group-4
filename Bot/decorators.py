@@ -1,3 +1,5 @@
+
+
 class InputErrorDecorator:
     @staticmethod
     def input_error(func):
@@ -10,5 +12,7 @@ class InputErrorDecorator:
                 return "Contact not found."
             except IndexError:
                 return "Invalid index."
+            except AttributeError:
+                return "Attribute error. Please check your input and try again."
 
         return inner

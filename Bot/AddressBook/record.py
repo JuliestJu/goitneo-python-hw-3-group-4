@@ -1,4 +1,4 @@
-from Bot.AddressBook.name import Name
+from name import Name
 from phone import Phone
 from birthday import Birthday
 
