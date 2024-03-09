@@ -1,4 +1,6 @@
 from decorators import InputErrorDecorator
+
+
 class AssistantBot:
     def __init__(self):
         self.contacts = {}

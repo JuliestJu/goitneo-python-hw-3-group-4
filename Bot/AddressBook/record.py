@@ -1,11 +1,13 @@
-from Bot.AddressBook.name import Name
+from name import Name
 from phone import Phone
+from birthday import Birthday
 
 
 class Record:
     def __init__(self, name):
         self.name = Name(name)
         self.phones = []
+        self.birthday = None
 
     def add_phone(self, phone_number):
         phone = Phone(phone_number)
@@ -21,6 +23,10 @@ class Record:
 
     def find_phone(self, phone_number):
         return [phone for phone in self.phones if str(phone) == phone_number]
+
+    def add_birthday(self, birthday_date):
+        if not self.birthday:
+            self.birthday = Birthday(birthday_date)
 
     def __str__(self):
         return f"Name: {self.name}, Phones: {', '.join(map(str, self.phones))}"
