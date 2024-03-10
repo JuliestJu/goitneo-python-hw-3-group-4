@@ -1,5 +1,5 @@
-from Bot.AddressBook.record import Record
-from Bot.AddressBook.address_book import AddressBook
+from record import Record
+from address_book import AddressBook
 
 book = AddressBook()
 

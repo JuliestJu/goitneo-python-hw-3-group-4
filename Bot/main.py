@@ -6,6 +6,7 @@ from assistant_bot import AssistantBot
 def main():
     bot = AssistantBot()
     print("Welcome to the assistant bot!")
+
     while True:
         user_input = input("Enter a command: ")
         command, args = bot.parse_input(user_input)
@@ -23,6 +24,12 @@ def main():
             print(bot.display_contact_phone(args))
         elif command == "all":
             print(bot.display_all_contacts())
+        elif command == "add-birthday":
+            print(bot.add_birthday(args))
+        elif command == "show-birthday":
+            print(bot.show_birthday(args))
+        elif command == "birthdays":
+            print(bot.birthdays())
         else:
             print("Invalid command.")
 

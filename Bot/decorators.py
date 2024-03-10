@@ -5,7 +5,7 @@ class InputErrorDecorator:
             try:
                 return func(*args, **kwargs)
             except ValueError:
-                return "Give me name and phone please."
+                return "ololo"
             except KeyError:
                 return "Contact not found."
             except IndexError:
