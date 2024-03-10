@@ -51,10 +51,10 @@ class AssistantBot:
 
     @InputErrorDecorator.input_error
     def change_contact_phone(self, args):
-        name, phone = args
+        name, old_phone, new_phone = args
         record = self.address_book.find(name)
         if record:
-            record.edit_phone(record.phones[0], phone)
+            record.edit_phone(old_phone, new_phone)
             return "Phone number updated."
         else:
             return "Contact not found."

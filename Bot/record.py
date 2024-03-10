@@ -17,8 +17,12 @@ class Record:
         self.phones = [phone for phone in self.phones if str(phone) != phone_number]
 
     def edit_phone(self, old_phone, new_phone):
-        if old_phone in [str(phone) for phone in self.phones]:
-            self.remove_phone(old_phone)
+        for i, phone in enumerate(self.phones):
+            if str(phone) == old_phone:
+                self.phones[i] = Phone(new_phone)
+                break
+        else:
+            # If no match is found, append the new phone
             self.add_phone(new_phone)
 
     def find_phone(self, phone_number):
