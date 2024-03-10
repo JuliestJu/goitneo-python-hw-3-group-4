@@ -24,12 +24,9 @@ class Record:
     def find_phone(self, phone_number):
         return [phone for phone in self.phones if str(phone) == phone_number]
 
-    def add_birthday(self, date):
+    def add_birthday(self, birthday_date):
         if not self.birthday:
-            self.birthday = Birthday(date)
-        else:
-            print("A birthday already exists for this contact.")
+            self.birthday = Birthday(birthday_date)
 
     def __str__(self):
-        birthday_info = f", Birthday: {self.birthday}" if self.birthday else ""
-        return f"Name: {self.name}{birthday_info}, Phones: {', '.join(map(str, self.phones))}"
+        return f"Name: {self.name}, Phones: {', '.join(map(str, self.phones))}"

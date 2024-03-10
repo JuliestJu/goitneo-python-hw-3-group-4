@@ -1,16 +1,18 @@
 from assistant_bot import AssistantBot
 
+# Task2
+
 
 def main():
-    print("Welcome to the assistant bot!")
     bot = AssistantBot()
+    print("Welcome to the assistant bot!")
 
     while True:
         user_input = input("Enter a command: ")
         command, args = bot.parse_input(user_input)
 
         if command in ["close", "exit"]:
-            print("Goodbye!")
+            print("Goodbye")
             break
         elif command == "hello":
             print("How can I help you?")
@@ -34,4 +36,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
