@@ -7,7 +7,7 @@ class InputErrorDecorator:
             try:
                 return func(*args, **kwargs)
             except ValueError:
-                return "ololo"
+                return "Error: Invalid input detected."
             except KeyError:
                 return "Contact not found."
             except IndexError:

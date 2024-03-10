@@ -29,8 +29,7 @@ class Record:
         return [phone for phone in self.phones if str(phone) == phone_number]
 
     def add_birthday(self, birthday_date):
-        if not self.birthday:
-            self.birthday = Birthday(birthday_date)
+        self.birthday = Birthday(birthday_date)
 
     def __str__(self):
         return f"Name: {self.name}, Phones: {', '.join(map(str, self.phones))}"
