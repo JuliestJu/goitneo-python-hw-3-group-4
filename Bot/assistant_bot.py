@@ -63,10 +63,12 @@ class AssistantBot:
     def display_contact_phone(self, args):
         name = args[0]
         record = self.address_book.find(name)
+
         if record and record.phones:
-            return f"{name}'s phone number: {record.phones[0]}"
+            phones_str = ', '.join(map(str, record.phones))
+            return f"{name}'s phones numbers: {phones_str}"
         else:
-            return "Contact not found or no phone number available."
+            return "Contact not found"
 
     @InputErrorDecorator.input_error
     def display_all_contacts(self):

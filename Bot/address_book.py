@@ -5,10 +5,17 @@ from record import Record
 
 class AddressBook(UserDict):
     def add_record(self, name, phone):
-        print(name, phone)
-        record = Record(name)
-        record.add_phone(phone)
-        self.data[str(record.name)] = record
+        str_name = str(name)
+
+        # Check if record with the given name already exists
+        if str_name in self.data:
+            existing_record = self.data[str_name]
+            existing_record.add_phone(phone)
+        else:
+            # Create a new record if no record with the name exists
+            record = Record(name)
+            record.add_phone(phone)
+            self.data[str_name] = record
 
     def find(self, name):
         return self.data.get(name)
