@@ -12,7 +12,7 @@ def main():
         command, args = bot.parse_input(user_input)
 
         if command in ["close", "exit"]:
-            print("Goodbye")
+            print("Goodbye!")
             break
         elif command == "hello":
             print("How can I help you?")
